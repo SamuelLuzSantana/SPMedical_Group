@@ -65,11 +65,11 @@ GO
 
 --Criando tabela medico
 CREATE TABLE medico(
-	idMedico		INT PRIMARY KEY IDENTITY,
-	idUsuario		INT FOREIGN KEY REFERENCES usuario(idUsuario),
+	idMedico			INT PRIMARY KEY IDENTITY,
+	idUsuario			INT FOREIGN KEY REFERENCES usuario(idUsuario),
 	idEspecialidade 	INT FOREIGN KEY REFERENCES especialidade(idEspecialidade),
-	idClinica		INT FOREIGN KEY REFERENCES clinica(idClinica),
-	CRM			VARCHAR(110) NOT NULL
+	idClinica			INT FOREIGN KEY REFERENCES clinica(idClinica),
+	CRM					VARCHAR(110) NOT NULL
 );
 GO
 
@@ -83,3 +83,7 @@ CREATE TABLE consulta(
 	descricao		VARCHAR(255)
 );
 GO
+
+ALTER TABLE paciente ADD endereco VARCHAR(200) NOT NULL;
+
+ALTER TABLE medico ADD nome VARCHAR(200) NOT NULL;
