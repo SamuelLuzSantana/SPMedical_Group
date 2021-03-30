@@ -11,3 +11,4 @@ SELECT * FROM medico;
 SELECT * FROM especialidade;
 SELECT * FROM consulta;
 SELECT * FROM clinica;
+
