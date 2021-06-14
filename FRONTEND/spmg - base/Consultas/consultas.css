@@ -1,0 +1,177 @@
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+header{
+    height: 6.5em;
+    width: 100%;
+}
+
+.background-hd{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    background: linear-gradient(161.61deg, #06D6A0 21.12%, #1E907C 108.91%), #C4C4C4;
+    position: relative;
+}
+
+.poly{
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    opacity: 15.55;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+
+
+.logo{
+    z-index: 1;
+}
+
+.logo img{
+    width: 11em;
+    height: 100%; 
+}
+
+nav{
+    width: 18em;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;  
+    list-style-type: none;
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+}
+
+li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li a:hover{
+    border-bottom: 8px solid #06D6A0;
+    padding-bottom: 9px;
+    text-shadow: 0px 5px 2px #1e907c;
+
+}
+
+img{
+    pointer-events: none;
+}
+
+img::selection{
+    background-color: #00000000;
+}
+
+.sair{
+    width: 6em;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sair img{
+    width: 2em;
+}
+.sair a{
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sair a:hover{
+    text-shadow: 0px 5px 2px #1e907c;
+    color: cornflowerblue;
+}
+
+
+/* FINAL ESTILIZAÇÃO HEADER */
+
+main{
+    display: flex;
+    width: 100%;
+    height: 23em;
+    justify-content: center;
+    margin-top: 2.5em;
+}
+
+.left{
+    height: 100%;
+    width: 25%;
+}
+
+.right{
+
+    height: 100%;
+    width: 75%;
+}
+
+.bemvindo{
+    width: 100%;
+    height: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bemvindo h2{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 21px;
+}
+
+.bemvindo p{
+    font-family: 'Righteous', cursive;
+    font-size: 2em;
+}
+
+.verde{
+    width: 50%;
+    height: 20em;
+    background-color: #1E907C;
+    position: relative;
+    z-index: 0;
+}
+
+.left img{
+    width: 10em;
+    margin-left: 4.5em;
+    margin-top: -3em;
+    position: absolute;
+    z-index: 1;
+}
+
+
+body::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(29deg, #39A0ED 14%,#364958 64%);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px #f0f0f0;
+}
