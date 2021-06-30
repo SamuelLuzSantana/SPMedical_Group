@@ -32,7 +32,6 @@ namespace SPmedicalGroup_webApi.Interfaces
         /// </summary>
         /// <param name="idConsulta"> id da consulta que sera atualizada</param>
         /// <param name="novaDescricao">nova descrição da consulta</param>
-        /// <param name="idUsuario">tipo usuario medico que editara a consulta</param>
         void EditarDescricao(int idConsulta, DescricaoViewModel novaDescricao);
     }
 }

@@ -10,10 +10,20 @@ using System.Threading.Tasks;
 
 namespace SPmedicalGroup_webApi.Repositories
 {
+    /// <summary>
+    /// Repositorio referente a consulta
+    /// </summary>
     public class ConsultaRepository : IConsultaRepository
     {
+        /// <summary>
+        /// Objeto contexto por onde serão chamados os métodos do EF Core
+        /// </summary>
         SPMGContext context = new SPMGContext();
 
+        /// <summary>
+        /// o ADIMINISTRADOR Cadastra uma nova consulta atraves dos seis parametros
+        /// </summary>
+        /// <param name="novaConsulta">uma nova consulta</param>
         public void Cadastrar(Consulta novaConsulta)
         {
             novaConsulta.IdSituacao = 3;
@@ -23,6 +33,11 @@ namespace SPmedicalGroup_webApi.Repositories
 
         }
 
+        /// <summary>
+        /// o  MEDICO altera a descrição da Consulta
+        /// </summary>
+        /// <param name="idConsulta">id da consulta que sera atualizada</param>
+        /// <param name="novaDescricao">nova descricao</param>
         public void EditarDescricao(int idConsulta, DescricaoViewModel novaDescricao)
         {
             Consulta consultaBuscada = context.Consultas.FirstOrDefault(x => x.IdConsulta == idConsulta);
@@ -39,11 +54,21 @@ namespace SPmedicalGroup_webApi.Repositories
 
         }
 
+        /// <summary>
+        /// O ADM Lista todas as consultas cadastradas no banco
+        /// </summary>
+        /// <returns>Uma lista de consultas</returns>
         public List<Consulta> Listar()
         {     
                 return context.Consultas.ToList();
         }
 
+
+        /// <summary>
+        /// Lista todas as consultas de um usuario 
+        /// </summary>
+        /// <param name="idUsuario">id do usuario que  sera buscado as consultas</param>
+        /// <returns></returns>
         public List<Consulta> ListarUsuario(int idUsuario)
         {
 

@@ -27,6 +27,11 @@ namespace SPmedicalGroup_webApi.Controllers
             _login = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Efetua login
+        /// </summary>
+        /// <param name="login">Objeto com as informações de login</param>
+        /// <returns>Um token gerado</returns>
         [HttpPost]
         public IActionResult Post(LoginViewModel login)
         {

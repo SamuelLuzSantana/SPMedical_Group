@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SPmedicalGroup_webApi</name>
+    </assembly>
+    <members>
+        <member name="M:SPmedicalGroup_webApi.Controllers.ConsultasController.Get">
+            <summary>
+            somento o ADMINISTRADOR Lista todas as consultas 
+            </summary>
+            <returns>uma lista com todas as consultas</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Controllers.ConsultasController.GetMy(System.Int32)">
+            <summary>
+            Paciente e medico lista suas consultas
+            </summary>
+            <param name="idUsuario">id do usuario que sera cadastrado</param>
+            <returns>uma lista de usuarios</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Controllers.ConsultasController.PatchDesc(System.Int32,SPmedicalGroup_webApi.ViewModel.DescricaoViewModel)">
+            <summary>
+            Somente o usuario MEDICO atualiza a descrição de uma consulta
+            </summary>
+            <param name="IdConsulta">id da consulta que sera atualizado</param>
+            <param name="descricaoAtualizada">nova descricao</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Controllers.ConsultasController.Post(SPmedicalGroup_webApi.Domains.Consulta)">
+            <summary>
+            Cadastra uma nova consulta
+            </summary>
+            <param name="novaConsulta">parametros para cadastrar uma consulta</param>
+            <returns>status code 201</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Controllers.LoginController.Post(SPmedicalGroup_webApi.ViewModel.LoginViewModel)">
+            <summary>
+            Efetua login
+            </summary>
+            <param name="login">Objeto com as informações de login</param>
+            <returns>Um token gerado</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Interfaces.IConsultaRepository.Listar">
+            <summary>
+            Lista todas as consultas
+            </summary>
+            <returns>Uma lista de todas as consultas</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Interfaces.IConsultaRepository.Cadastrar(SPmedicalGroup_webApi.Domains.Consulta)">
+            <summary>
+            Cadastra uma nova consulta 
+            </summary>
+            <param name="novaConsulta">As informações da nova consultas</param>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Interfaces.IConsultaRepository.ListarUsuario(System.Int32)">
+            <summary>
+            Lista todas as consultas de um Usuario
+            </summary>
+            <returns>Uma lista de todas as consultas de um Usuario</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Interfaces.IConsultaRepository.EditarDescricao(System.Int32,SPmedicalGroup_webApi.ViewModel.DescricaoViewModel)">
+            <summary>
+            Edita uma descricao de uma consulta ja cadastrada
+            </summary>
+            <param name="idConsulta"> id da consulta que sera atualizada</param>
+            <param name="novaDescricao">nova descrição da consulta</param>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">e-mail do usuário</param>
+            <param name="senha">senha do usuário</param>
+            <returns>Um objeto do tipo Usuario que foi buscado</returns>
+        </member>
+        <member name="T:SPmedicalGroup_webApi.Repositories.ConsultaRepository">
+            <summary>
+            Repositorio referente a consulta
+            </summary>
+        </member>
+        <member name="F:SPmedicalGroup_webApi.Repositories.ConsultaRepository.context">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Repositories.ConsultaRepository.Cadastrar(SPmedicalGroup_webApi.Domains.Consulta)">
+            <summary>
+            o ADIMINISTRADOR Cadastra uma nova consulta atraves dos seis parametros
+            </summary>
+            <param name="novaConsulta">uma nova consulta</param>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Repositories.ConsultaRepository.EditarDescricao(System.Int32,SPmedicalGroup_webApi.ViewModel.DescricaoViewModel)">
+            <summary>
+            o  MEDICO altera a descrição da Consulta
+            </summary>
+            <param name="idConsulta">id da consulta que sera atualizada</param>
+            <param name="novaDescricao">nova descricao</param>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Repositories.ConsultaRepository.Listar">
+            <summary>
+            O ADM Lista todas as consultas cadastradas no banco
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Repositories.ConsultaRepository.ListarUsuario(System.Int32)">
+            <summary>
+            Lista todas as consultas de um usuario 
+            </summary>
+            <param name="idUsuario">id do usuario que  sera buscado as consultas</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPmedicalGroup_webApi.Repositories.UsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">e-mail do usuário</param>
+            <param name="senha">senha do usuário</param>
+            <returns>Um objeto do tipo Usuario que foi buscado</returns>
+        </member>
+        <member name="T:SPmedicalGroup_webApi.ViewModel.DescricaoViewModel">
+            <summary>
+            viewmodel referente a editar descricao
+            </summary>
+        </member>
+        <member name="T:SPmedicalGroup_webApi.ViewModel.LoginViewModel">
+            <summary>
+            View model referente ao Login
+            </summary>
+        </member>
+    </members>
+</doc>

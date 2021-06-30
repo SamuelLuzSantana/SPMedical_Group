@@ -26,7 +26,11 @@ namespace SPmedicalGroup_webApi.Controllers
             _consulta = new ConsultaRepository();
         }
 
-        [Authorize(Roles = "1")] 
+        /// <summary>
+        /// somento o ADMINISTRADOR Lista todas as consultas 
+        /// </summary>
+        /// <returns>uma lista com todas as consultas</returns>
+        [Authorize(Roles = "1")] //Usuario do tipo administrador (id 1) esta autorizado 
         [HttpGet]
         public IActionResult Get()
         {
@@ -42,7 +46,12 @@ namespace SPmedicalGroup_webApi.Controllers
 
         }
         
-        [Authorize]
+        /// <summary>
+        /// Paciente e medico lista suas consultas
+        /// </summary>
+        /// <param name="idUsuario">id do usuario que sera cadastrado</param>
+        /// <returns>uma lista de usuarios</returns>
+        [Authorize] //somente se o usuario estiver logado consiguira visualizar suas consultas
         [HttpGet("minhasConsultas")]
         public IActionResult GetMy(int idUsuario)
         {
@@ -59,7 +68,13 @@ namespace SPmedicalGroup_webApi.Controllers
             }
         }
 
-        [Authorize(Roles = "2")]
+        /// <summary>
+        /// Somente o usuario MEDICO atualiza a descrição de uma consulta
+        /// </summary>
+        /// <param name="IdConsulta">id da consulta que sera atualizado</param>
+        /// <param name="descricaoAtualizada">nova descricao</param>
+        /// <returns></returns>
+        [Authorize(Roles = "2")]//somente o medico (id 2) esta autorizado a editar
         [HttpPatch("{IdConsulta}")]
         public IActionResult PatchDesc(int IdConsulta, DescricaoViewModel descricaoAtualizada)
         {
@@ -77,7 +92,12 @@ namespace SPmedicalGroup_webApi.Controllers
 
         }
 
-        [Authorize(Roles = "1")]
+        /// <summary>
+        /// Cadastra uma nova consulta
+        /// </summary>
+        /// <param name="novaConsulta">parametros para cadastrar uma consulta</param>
+        /// <returns>status code 201</returns>
+        [Authorize(Roles = "1")]  //Usuario do tipo administrador (id 1) esta autorizado 
         [HttpPost]
         public IActionResult Post(Consulta novaConsulta)
         {

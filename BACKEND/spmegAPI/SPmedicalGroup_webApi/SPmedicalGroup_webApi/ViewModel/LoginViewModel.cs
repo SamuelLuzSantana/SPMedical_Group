@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace SPmedicalGroup_webApi.ViewModel
 {
+    /// <summary>
+    /// View model referente ao Login
+    /// </summary>
     public class LoginViewModel
     {
         public string email{ get; set; }
