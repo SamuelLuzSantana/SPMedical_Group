@@ -22,9 +22,10 @@ VALUES	(2, 'ricardo.lemos@spmedicalgroup.com.br', 'ricardo123'),
 		(3, 'henrique@gmail.com', 'henrique123'),
 		(3, 'joao@gmail.com', 'joao123'),
 		(3, 'bruno@gmail.com', 'bruno123'),
-		(3, 'mariana@outlook.com', 'mariana123'),
-		(1, 'adm@adm.com', 'adm123'),
-		(2, 'lucas@lucas.com', 'lucas123');
+		(3, 'paciente@paciente.com', 'paciente123'),
+		(1, 'adm@email.com', 'adm123'),
+		(2, 'medico@email.com', 'medico123');
+
 GO
 
 

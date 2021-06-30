@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPMG\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj": {}
+    "C:\\Users\\35834520898\\Documents\\SPMedical_Group\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPMG\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj": {
+    "C:\\Users\\35834520898\\Documents\\SPMedical_Group\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPMG\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\35834520898\\Documents\\SPMedical_Group\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj",
         "projectName": "senai.spmg.webAPI",
-        "projectPath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPMG\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPMG\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\obj\\",
+        "projectPath": "C:\\Users\\35834520898\\Documents\\SPMedical_Group\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\senai.spmg.webAPI.csproj",
+        "packagesPath": "C:\\Users\\35834520898\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\35834520898\\Documents\\SPMedical_Group\\BACKEND\\senai.spmg.webAPI\\senai.spmg.webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\35834520898\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
