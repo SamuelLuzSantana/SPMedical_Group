@@ -31,6 +31,17 @@ namespace SPmedicalGroup_webApi
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             });
 
+            // Adiciona o CORS ao projeto
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                    builder => {
+                        builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
+                                                                    .AllowAnyHeader()
+                                                                    .AllowAnyMethod();
+                    }
+                );
+            });
+
             // Adiciona o servi�o do Swagger
             // https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio
 
@@ -112,6 +123,9 @@ namespace SPmedicalGroup_webApi
 
             // Habilita autorizacao
             app.UseAuthorization();
+
+            // Habilita o CORS
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

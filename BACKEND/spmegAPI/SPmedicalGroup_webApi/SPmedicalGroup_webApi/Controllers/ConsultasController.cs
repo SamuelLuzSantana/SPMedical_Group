@@ -30,7 +30,7 @@ namespace SPmedicalGroup_webApi.Controllers
         /// somento o ADMINISTRADOR Lista todas as consultas 
         /// </summary>
         /// <returns>uma lista com todas as consultas</returns>
-        [Authorize(Roles = "1")] //Usuario do tipo administrador (id 1) esta autorizado 
+        /*[Authorize(Roles = "1")] */  //Usuario do tipo administrador (id 1) esta autorizado 
         [HttpGet]
         public IActionResult Get()
         {

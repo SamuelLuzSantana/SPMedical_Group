@@ -1,0 +1,28 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    width: 100%;
+
+    flex-direction: column;
+}
+
+.listar_consultas{
+    color: #0f0f0f;
+}
+
+hr{
+    width: 800px;
+    margin: 35px 0px;
+}
+
+
+td{
+    padding: 0 50px;
+}
+
+.cadastrar_consulta{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5em;
+}
