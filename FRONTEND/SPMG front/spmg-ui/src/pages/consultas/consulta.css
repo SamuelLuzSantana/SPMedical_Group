@@ -11,18 +11,40 @@
     color: #0f0f0f;
 }
 
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+select, input{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+}
+
+
+
 hr{
-    width: 800px;
-    margin: 35px 0px;
+    width: 95%;
+    margin: 2em 0em;
+}
+
+tr{
+    width: 450px;
 }
 
 
 td{
     padding: 0 50px;
+
 }
 
 .cadastrar_consulta{
     display: flex;
     flex-direction: column;
     padding-top: 5em;
+    width: 27em;
 }

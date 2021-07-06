@@ -5,132 +5,220 @@ import './consulta.css'
 class Consultas extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             //nomeEstado : ValorInicial
-            
-            Consulta : [],
 
-                                        // pacientes : [],
-                                        // medico : [],
-                                        // situacao : [],
+            Consulta: [],
+            idPaciente: '',
+            idMedico: '',
+            idSituacao: '',
+            descricao: '',
+            nomePaciente: '',
+            data: ''
 
-                                        // descricao : '',
-            
-            //Consultas lista
-            listaConsultas : []
+
+            // pacientes : [],
+            // medico : [],
+            // situacao : [],
+
         }
     }
 
-    buscarConsulta = () =>{
-        console.log(" ")
+    buscarConsulta = () => {
+        console.log("Chamada para API___________")
 
         fetch('http://localhost:5000/api/Consultas')
+            //.then(resposta => console.log(resposta)) 
+            .then(resposta => resposta.json())
+            //.then(data => this.setState({ Consulta: data }))
 
-        .then(resposta => resposta.json())
+            //define que a requisição sera retornada em JSON
+            // .then(resposta => resposta.json())
+            .then(data => this.setState({ Consulta: data }))
 
-        .then (data => this.setState ({ Consulta : data}) )
+            //atualiza o state Consultas com os dados obtidos
 
-        .catch( (erro) => console.log(erro) )
+            //caso aconteça algum erro mostra no console do navegador.
+            .catch((erro) => console.log(erro))
     }
 
-    componentDidMount(){
-        //codigo
-        this.buscarConsulta(); 
 
+    atualizaStateCampo = async (campo) => {
+        await this.setState({ [campo.target.name]: campo.target.value })
+        console.log('id do paciente ' + this.state.idPaciente)
+        console.log('id do medico ' + this.state.idMedico)
+        console.log('id da situacao ' + this.state.idSituacao)
+        console.log('descricao ' + this.state.descricao)
+        console.log('data ' + this.state.dataConsulta)
+    };
 
-    }
+    cadastrarConsulta = (event) => {
 
+        // Ignora o comportamento padrão do navegador
+        event.preventDefault();
+
+        let consulta = {
+            idPaciente : this.state.idPaciente,
+            idMedico :   this.state.idMedico,
+            idSituacao : this.state.idSituacao ,
+            descricao :  this.state.descricao,
+            dataConsulta:    new Date( this.state.dataConsulta)  
+        };
+
+        //faz a chamada da api para o metodo
+        fetch('http://localhost:5000/api/Consultas',{
+            //define o tipo de requisição
+            method: 'POST',
+
+            body:JSON.stringify(consulta),
+
+            headers : {
+                "Content-Type": "application/json"
+            }
+
+        })
+
+        .then(console.log("Consulta  cadastrado"))
+        .catch((error) => console.log(error))
+
+        .then(this.buscarConsulta)
         
+    }
 
-        atualizaStateCampo = (campo) => {this.setState({ [campo.target.name] : campo.target.value })};
+    //chama a função buscarConsulta assim que o componente é renderizado
+    componentDidMount() {
+        //codigo
+        this.buscarConsulta();
+    }
 
-        render() {
+
+    render() {
         return (
 
-            
+
             <div className="main">
 
-               
+
                 {/* Cadastrar consulta */}
-                <section className = "cadastrar_consulta">
-                    
+                <section className="cadastrar_consulta">
+
+                    <h2>Cadastrar:</h2>
                     {/* pacientes */}
-                    <select name="paciente" id="paciente">
-                        <option value="ligia">Ligia</option>
-                        <option value="alexandre">Alexandre</option>
-                        <option value="fernando">Fernando</option>
-                        <option value="henrique">Henrique</option>
-                        <option value="joao">João</option>
-                        <option value="bruno">Bruno</option>
-                        <option value="maria">Maria</option>
-                    </select>
+                    <form className="formulario" onSubmit={this.cadastrarConsulta}>
 
-                    {/* medicos */}
-                    <select name="medicos" id="medicos"> 
-                        <option value="Ricardo Lemos">Ricardo Lemos</option>
-                        <option value="Roberto Possarle">Roberto Possarle</option>
-                        <option value="Helena Strada">Helena Strada</option>
-                    </select>
+                        <select
+                            name="idPaciente"
+                            id="paciente"
+                            value={this.state.idPaciente}
+                            onChange={this.atualizaStateCampo}
+                        >
 
-                    {/* situação */}
-                    <select name="medicos" id="medicos"> 
-                        <option value="1">Realizada</option>    
-                        <option value="2">Cancelada</option>
-                        <option value="3">Agendada</option>
-                    </select>
+                            <option value="1">Ligia</option>
+                            <option value="2">Alexandre</option>
+                            <option value="3">Fernando</option>
+                            <option value="4">Henrique</option>
+                            <option value="5">João</option>
+                            <option value="6">Bruno</option>
+                            <option value="7">Maria</option>
+
+                        </select>
 
 
-                    <input 
-                        type="text" 
-                        name="titulo"
-                        value="this.state.titulo"
-                        onChange={this.atualizaStateCampo}
-                        placeholder="Título do evento"
-                    ></input>
+                        {/* medicos */}
+                        <select
+                            name="idMedico"
+                            id="medicos"
+                            value={this.state.idMedico}
+                            onChange={this.atualizaStateCampo}
+                        >
+                            <option value="1">Ricardo Lemos</option>
+                            <option value="2">Roberto Possarle</option>
+                            <option value="3">Helena Strada</option>
+                        </select>
 
-                    <input type="datetime-local" id="data" name=""></input>
+                        {/* situação */}
+                        <select
+                            name="idSituacao"
+                            value={this.state.idSituacao}
+                            id="Situacao"
+                            onChange={this.atualizaStateCampo}
+                        >
 
-                    <input type="submit" value="Submit"></input>
+                            <option value="1">Realizada</option>
+                            <option value="2">Cancelada</option>
+                            <option value="3">Agendada</option>
 
+                        </select>
 
+                        {/* Descrição */}
+                        <input
+                            type="text"
+                            name="descricao"
+                            value={this.state.descricao}
+                            onChange={this.atualizaStateCampo}
+                            placeholder="Descrição da consulta"
+                        ></input>
+
+                        <input
+                            type="date"
+                            name="data"
+                            id="dataEvento"
+                            value={this.state.dataConsulta}
+                            onChange={this.atualizaStateCampo}
+                        >
+
+                        </input>
+
+                        <button type="submit">
+                            cadastrar
+                        </button>
+
+                    </form>
                 </section>
 
-                <hr/>
+                {/* Aqui a linha é bala */}
+                <hr />
 
                 <div className="listar_consultas">
+                    <table>
+                        <thead className="thead">
+                            <tr>
+                                <th>ID Paciente</th> 
+                                <th>ID Medico</th>
+                                <th>Situação</th>
+                                <th>Descrição</th>
+                                <th>DATA</th>
+                            </tr>
+                        </thead>
 
-                        {
-                            //ARRAY
-                            this.state.Consulta.map( (Consulta) => {
-                                return(
-
-
-                                    <table>
-                                        <tbody>
-                                            <tr key={Consulta.idConsulta}>
-                                                <td>{Consulta.nomeMedico}</td>
-                                                <td>{Consulta.data}</td>
-                                                <td>{Consulta.nomepaciente}</td>
-                                                <td>{Consulta.situacao}</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                )
-
-
-                            })
-                        }
+                        <tbody>
+                            {
+                                //ARRAY
+                                this.state.Consulta.map((Consulta) => {
+                                    return (
+                                        <tr key={Consulta.idConsulta}>
+                                            <td>{Consulta.idPaciente}</td>
+                                            <td>{Consulta.idMedico}</td>
+                                            <td>{Consulta.idSituacao}</td>
+                                            <td>{Consulta.descricao}</td>
+                                            <td>{new Date(Consulta.dataConsulta).toLocaleDateString()}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
+                    </table>
                 </div>
 
+
             </div>
-            
+
         );
-    
 
 
-}
+
+    }
 
 }
 

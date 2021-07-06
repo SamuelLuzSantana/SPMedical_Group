@@ -97,7 +97,7 @@ namespace SPmedicalGroup_webApi.Controllers
         /// </summary>
         /// <param name="novaConsulta">parametros para cadastrar uma consulta</param>
         /// <returns>status code 201</returns>
-        [Authorize(Roles = "1")]  //Usuario do tipo administrador (id 1) esta autorizado 
+        //[Authorize(Roles = "1")]  //Usuario do tipo administrador (id 1) esta autorizado 
         [HttpPost]
         public IActionResult Post(Consulta novaConsulta)
         {
