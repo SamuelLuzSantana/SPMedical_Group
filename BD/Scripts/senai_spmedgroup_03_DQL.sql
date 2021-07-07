@@ -166,3 +166,8 @@ SELECT * FROM Consultas;
 		-- aqui executa o stored procedure "CalcularIdade" pelo nome do paciente:
 		EXECUTE CalcularIdadeEspecifica @nomePaciente = 'Mariana';
 		GO
+
+
+SELECT * FROM Consultas;
+DELETE FROM Consultas WHERE idConsulta BETWEEN 9 and 38;
+ 

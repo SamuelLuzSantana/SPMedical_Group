@@ -10,6 +10,7 @@ import './index.css';
 import App from './pages/home/App';
 import adm from './pages/consultas/consultas';
 import notfound from './pages/notfound/notfound'
+import medico from './pages/medico/medico'
 //paginas
 
 import reportWebVitals from './reportWebVitals';
@@ -23,7 +24,7 @@ const routing = (
         <Route exact path="/" component={App}  />{/*Home */}
         <Route path="/adm" component={adm}  />{/*Consultas */}
         <Route  exact path="/notfound" component={notfound}  />{/*not found */}
-
+        <Route  path="/medico" component={medico}  />{/*medico*/}
        <Redirect to = "/notfound"/>  {/* redireciona pra not found  */}
 
 
