@@ -1,0 +1,35 @@
+Administrador / Médico / Paciente
+1. Login;
+
+Administrador
+1. Cadastrar nova consulta;
+2. Listagem de todas consultas;
+
+Médico
+1. Listagem de consultas;
+2. Inserir uma nova descrição na consulta;
+
+Paciente
+1. Listagem de consultas;
+
+
+- Cadastrar não altera a situação
+- Listar não lista data correta
+- O botão do editar não esta funfando
+
+___Login
+___Usuario Comum
+___To triste pra k7
+___Estilizar 
+___Mobile
+
+
+bacana 
+
+
+
+
+isso quero solicitar da api pra cadastrar e retornar uma mensagem no console que foi mjas ta com bo no cors perai alo?
+
+
+iai 

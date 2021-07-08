@@ -2,6 +2,8 @@ import { Component } from 'react';
 import './consulta.css'
 
 
+
+
 class Consultas extends Component {
     constructor(props) {
         super(props);
@@ -98,6 +100,10 @@ class Consultas extends Component {
 
 
             <div className="main">
+
+                <header>
+                    administrador
+                </header>
 
 
                 {/* Cadastrar consulta */}

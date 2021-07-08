@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 
 class medico extends Component {
-   
+
     constructor(props) {
         super(props);
 
@@ -25,16 +25,16 @@ class medico extends Component {
 
         fetch('http://localhost:5000/api/Consultas')
 
-        //define que a requisição sera retornada em JSON
-        .then(resposta => resposta.json())
+            //define que a requisição sera retornada em JSON
+            .then(resposta => resposta.json())
 
-        // .then(resposta => resposta.json())
+            // .then(resposta => resposta.json())
 
-        //atualiza o state Consultas com os dados obtidos
-        .then(data => this.setState({ Consulta: data }))
+            //atualiza o state Consultas com os dados obtidos
+            .then(data => this.setState({ Consulta: data }))
 
-        //caso aconteça algum erro mostra no console do navegador.
-        .catch((erro) => console.log(erro))
+            //caso aconteça algum erro mostra no console do navegador.
+            .catch((erro) => console.log(erro))
     }
 
 
@@ -86,16 +86,18 @@ class medico extends Component {
         this.buscarConsulta();
     }
 
-    buscarConsultaPorId = (Consulta ) =>{
-        this.setState({ 
-            idConsultaAlterada : Consulta.idConsulta,
-            descricao : Consulta.descricao
+    buscarConsultaPorId = (Consulta) => {
+        this.setState({
+            idConsultaAlterada: Consulta.idConsulta,
+            descricao: Consulta.descricao
         }, () => {
             console.log(
                 //exibe no console uma reposta da execução?
                 'A Consulta' + Consulta.idConsulta + 'foi selelecionada',
                 'agora o valor do state idConsultaAlterada é:  ' + this.state.idConsultaAlterada,
                 ' e o valor do state é: ' + this.state.descricao
+
+
             );
         });
     };
@@ -132,12 +134,26 @@ class medico extends Component {
                                             <td>{Consulta.idSituacao}</td>
                                             <td>{Consulta.descricao}</td>
                                             <td>{new Date(Consulta.dataConsulta).toLocaleDateString()}</td>
-                                            <td><button onClick={this.buscarConsultaPorId(Consulta)}>Editar</button></td>
+                                            <td><button onClick={() => this.buscarConsultaPorId(Consulta)}>Editar</button></td>
                                         </tr>
                                     )
                                 })
                             }
                         </tbody>
+
+                        <input
+                            type="text"
+                            id="descricao"
+                            value={this.state.descricao}
+                            onChange={this.atualizaStateCampo}
+                            placeholder="Nova Descrição"
+                        />
+
+                        <button onClick={() =>
+                            this.buscarConsultaPorId()}>Atualizar</button>
+
+
+
                     </table>
                 </div>
 
