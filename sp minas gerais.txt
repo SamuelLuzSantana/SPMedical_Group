@@ -19,17 +19,6 @@ Paciente
 
 ___Login
 ___Usuario Comum
-___To triste pra k7
 ___Estilizar 
 ___Mobile
 
-
-bacana 
-
-
-
-
-isso quero solicitar da api pra cadastrar e retornar uma mensagem no console que foi mjas ta com bo no cors perai alo?
-
-
-iai 
